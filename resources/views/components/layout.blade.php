@@ -13,6 +13,12 @@
 <div class="container">
     <h1>{{ $title }}</h1>
 
+    @if(session('mensagem.sucesso'))
+        <div class="alert alert-success">
+            {{ session('mensagem.sucesso') }}
+        </div>
+    @endif
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

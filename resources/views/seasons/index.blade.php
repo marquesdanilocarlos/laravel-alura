@@ -7,7 +7,7 @@
                 </a>
 
                 <span class="badge bg-secondary">
-                    {{ $season->episodes->count() }}
+                    {{  $season->getNumberOfWatched() }}  / {{ $season->episodes->count() }}
                 </span>
             </li>
         @endforeach
