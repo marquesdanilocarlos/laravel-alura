@@ -18,7 +18,7 @@ class AuthController extends Controller
             return redirect()->back()->withErrors(['Usuário ou senha inválidos!']);
         };
 
-        return true;
+        return redirect()->intended();
     }
 
     public function logout()
