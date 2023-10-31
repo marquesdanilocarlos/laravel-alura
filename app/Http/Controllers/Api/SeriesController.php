@@ -45,16 +45,20 @@ class SeriesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Series $series, SeriesFormRequest $request)
     {
-        //
+        $series->fill($request->all());
+        $series->save();
+
+        return response()->json($series, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(int $id)
     {
-        //
+        Series::destroy($id);
+        return response()->noContent();
     }
 }
