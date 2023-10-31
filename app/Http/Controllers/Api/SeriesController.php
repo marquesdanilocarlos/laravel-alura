@@ -36,9 +36,14 @@ class SeriesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(int $id)
+    public function show(/*int $id*/ Series $series)
     {
-        $series = Series::whereId($id)->with('seasons.episodes')->first();
+        //$series = Series::whereId($id)->with('seasons.episodes')->first();
+
+        /*if (!$series) {
+           return response()->json(['message' => 'Series not found.'], 404);
+        }*/
+
         return $series;
     }
 
